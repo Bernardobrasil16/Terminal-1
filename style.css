@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  background: #020702;
+  color: #33ff33;
+  font-family: "Courier New", monospace;
+  overflow: hidden;
+}
+
+.terminal {
+  padding: 30px;
+  height: 100vh;
+  box-sizing: border-box;
+  text-shadow: 0 0 6px #33ff33;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+input {
+  background: transparent;
+  border: none;
+  color: #33ff33;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  text-shadow: 0 0 6px #33ff33;
+  width: 70%;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #ff3333;
+  text-shadow: 0 0 6px #ff3333;
+}
+
+h1, h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.entry {
+  margin-bottom: 6px;
+}
+
+.cursor::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}
